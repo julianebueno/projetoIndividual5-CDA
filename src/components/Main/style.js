@@ -2,14 +2,17 @@ import styled from "styled-components"
 
 export const StyledMain = styled.main`
 
-border: solid red;
 display: flex;
+flex-wrap: wrap;
 height: 80vh;
+padding: 1rem;
+gap: 1rem;
 
 div{
-  border: solid blue;
+  border: solid ${(props)=> props.theme.primaria};
   display: flex;
   flex-grow: 1;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
 `
