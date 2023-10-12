@@ -1,15 +1,15 @@
 import React from 'react'
 import {StyledHome} from './style'
 
-import Header from '../../components/Header/index.jsx'
-import Main from '../../components/Main/index.jsx'
+import Header from '../../components/view/Home/Header/index.jsx'
+import Layout from '../../components/shared/Layout/index.jsx'
 
 function Home() {
 
   return (
     <StyledHome>
       <Header/>
-      <Main/>
+      <Layout/>
     </StyledHome>
   )
 }

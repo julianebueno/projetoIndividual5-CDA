@@ -2,11 +2,12 @@ export const tema = {
   // ---------------------------------- Cores
   // Color (primary, secondary, and primary color variants)
   primaria: '#2E9599',
+  primariaVariante: '#4EB5B9',
   
   // ---------------------------------- Superficies
   // Surfaces (backgrounds and components)
-  fundoPagina: '#1c1c1c',
-  fundoHeader: '#202125',
+  fundoPrincipal: '#1c1c1c',
+  fundoSegundario: '#202125',
   
   // ---------------------------------- Estados
   // States (such as error states)

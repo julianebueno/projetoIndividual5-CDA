@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: ${(props)=> props.theme.fundoPagina};
+    background-color: ${(props)=> props.theme.fundoPrincipal};
     min-height: 100vh;
     font-family: 'Roboto';
   }
