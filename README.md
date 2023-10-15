@@ -52,4 +52,4 @@ http://localhost:5173/
 
 [Matheus Battisti](https://www.youtube.com/@MatheusBattisti)
 
-[Ibas Logic](https://ibaslogic.com/how-to-edit-todos-items-in-react/)
+<!-- [Ibas Logic](https://ibaslogic.com/how-to-edit-todos-items-in-react/) -->
