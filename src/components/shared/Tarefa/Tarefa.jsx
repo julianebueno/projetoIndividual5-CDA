@@ -9,16 +9,11 @@ const Tarefa = ({ tarefa, completaTarefa, removeTarefa }) => {
 
   return (
     <StyledTarefa>
-      <p style={{ textDecoration: tarefa.concluido ? "line-through" : "" }}>
-        {tarefa.descricao}
-      </p>
-      <div>
+      <p style={{ textDecoration: tarefa.concluido ? "line-through" : "" }}> {tarefa.descricao} </p>
+      <div className="containerBotoes">
         <Button texto={<Check weight="bold" size={20} />} onClick={() => completaTarefa(tarefa.id)} />
         <Button texto={<Pen weight="bold" size={20} />} onClick={handleClick} />
-        <Button
-          texto={<Trash weight="bold" size={20} />}
-          onClick={() => removeTarefa(tarefa.id)}
-        />
+        <Button texto={<Trash weight="bold" size={20} />} onClick={() => removeTarefa(tarefa.id)} />
       </div>
     </StyledTarefa>
   );

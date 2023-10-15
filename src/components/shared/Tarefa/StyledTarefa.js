@@ -13,8 +13,7 @@ export const StyledTarefa = styled.div`
     border: solid 1px ${(props) => props.theme.primaria};
   }
 
-  > div {
-    /* border: solid red; */
+  .containerBotoes {
     display: flex;
     gap: 10px;
   }
