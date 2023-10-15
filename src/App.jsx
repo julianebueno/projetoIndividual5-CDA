@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './pages/Home/index.jsx'
+import Home from './pages/Home.jsx'
 import { GlobalStyle } from './styles/GlobalStyle.js'
 import { ThemeProvider } from 'styled-components'
 import { tema } from './styles/tema.js'
