@@ -39,6 +39,18 @@ function Home() {
     setTarefas(TarefasFiltradas);
   };
 
+  const setAtualizacao = (descricaoAtualizada, id) => {
+    if (!descricaoAtualizada) return;
+    setTarefas(
+      tarefas.map((tarefa) => {
+        if (tarefa.id === id) {
+          tarefa.descricao = descricaoAtualizada;
+        }
+        return tarefa;
+      })
+    );
+  }
+
   return (
     <StyledHome>
       <Header filtro={filtro} setFiltro={setFiltro} />
@@ -62,9 +74,11 @@ function Home() {
                 tarefa={tarefa}
                 completaTarefa={completaTarefa}
                 removeTarefa={removeTarefa}
+                setAtualizacao={setAtualizacao}
               />
             );
-          })}
+          })
+        }
       </div>
     </StyledHome>
   );
