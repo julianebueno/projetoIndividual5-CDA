@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const StyledMenu = styled.section`
-  /* border: solid blue; */
   display: flex;
   flex-wrap: wrap;
   width: 80vw;
+  max-width: 1400px;
   gap: 1rem;
   padding-top: 1rem;
 
-  .containerMenu {
-    /* border: solid fuchsia; */
+  .containerBusca, .containerAdicionar {
     display: flex;
     justify-content: center;
     flex-grow: 1;

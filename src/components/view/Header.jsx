@@ -1,16 +1,21 @@
 import React from "react";
 import { StyledHeader } from "./StyledHeader";
-import { List } from "@phosphor-icons/react";
-import Button from "../common/Button/Button";
+import { Funnel } from "@phosphor-icons/react";
 
-const Header = () => {
-  const handleClick = () => {
-    alert("Button header clicado \nMudança futura de cor");
-  };
+const Header = ({ filtro, setFiltro }) => {
   return (
     <StyledHeader>
-      <h2 className={`tituloHeader`}>ToDoList</h2>
-      <Button texto={<List weight="bold" size={20} />} onClick={handleClick} />
+      <div className="containerHeader">
+        <h2 className={`tituloHeader`}>ToDoList</h2>
+        <div className="containerFiltro">
+          <select value={filtro} onChange={(e) => setFiltro(e.target.value)}>
+            <option value="Todos">Todos</option>
+            <option value="Incompletos">A Fazer</option>
+            <option value="Completas">Completas</option>
+          </select>
+          <Funnel weight="bold" size={32} />
+        </div>
+      </div>
     </StyledHeader>
   );
 };

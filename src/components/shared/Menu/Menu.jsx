@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { StyledMenu } from "./StyledMenu";
-import { Plus, MagnifyingGlass, Funnel } from "@phosphor-icons/react";
+import { Plus, MagnifyingGlass } from "@phosphor-icons/react";
 import Button from "../../common/Button/Button";
+import Input from "../../common/Input/Input";
 
-const Menu = ({ addTarefa }) => {
+const Menu = ({ addTarefa, busca, setBusca }) => {
   const [value, setValue] = useState("");
 
   const handleSubmitAdd = (e) => {
@@ -13,40 +14,16 @@ const Menu = ({ addTarefa }) => {
     setValue("");
   };
 
-  const handleClick = () => {
-    console.log("Botão Adicionar clicado");
-  };
-
   return (
     <StyledMenu>
-      <form className="containerMenu" onSubmit={handleSubmitAdd}>
-        <input
-          type="text"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <Button
-          type="submit"
-          texto={<Plus weight="bold" size={32} />}
-          onClick={handleClick}
-        />
+      <div className="containerBusca">
+        <Input value={busca} onChange={(e) => setBusca(e.target.value)} />
+        <MagnifyingGlass weight="bold" size={32} />
+      </div>
+      <form className="containerAdicionar" onSubmit={handleSubmitAdd}>
+        <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+        <Button type="submit" texto={<Plus weight="bold" size={32} />} />
       </form>
-      <form className="containerMenu">
-        <input type="text" />
-        <Button
-          type="submit"
-          texto={<MagnifyingGlass weight="bold" size={32} />}
-          onClick={handleClick}
-        />
-      </form>
-      {/* <form className="containerMenu">
-        <input type="text" />
-        <Button
-          type="submit"
-          texto={<Funnel weight="bold" size={32} />}
-          onClick={handleClick}
-        />
-      </form> */}
     </StyledMenu>
   );
 };

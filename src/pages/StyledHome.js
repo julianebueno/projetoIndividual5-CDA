@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.section`
-  /* border: solid yellow; */
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
 
   .listaTarefas {
-    /* border: solid fuchsia; */
     width: 80vw;
+    max-width: 1400px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -34,8 +33,4 @@ export const StyledHome = styled.section`
       color: ${(props) => props.theme.primariaVariante};
     }
   }
-
-  /* input[type='checkbox']{
-    
-  } */
 `;

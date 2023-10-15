@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { StyledHome } from "./StyledHome";
 import { dataTarefas } from "../core/data";
-import Tarefa from "../components/shared/Tarefa/Tarefa";
 
 import Header from "../components/view/Header";
 import Menu from "../components/shared/Menu/Menu";
-// import Layout from '../components/shared/Layout/index.jsx'
-// import Tarefas from '../Tarefas/index.jsx'
+import Tarefa from "../components/shared/Tarefa/Tarefa";
 
 function Home() {
   const [tarefas, setTarefas] = useState(dataTarefas);
+  const [busca, setBusca] = useState("");
+  const [filtro, setFiltro] = useState("Todos");
 
   const addTarefa = (descricao) => {
     const novaTarefas = [
@@ -41,21 +41,30 @@ function Home() {
 
   return (
     <StyledHome>
-      <Header />
-      <Menu addTarefa={addTarefa} />
-
+      <Header filtro={filtro} setFiltro={setFiltro} />
+      <Menu addTarefa={addTarefa} busca={busca} setBusca={setBusca} />
       <div className="listaTarefas">
-        {/* <Tarefas/> */}
-        {tarefas.map((tarefa) => {
-          return (
-            <Tarefa
-              key={tarefa.id}
-              tarefa={tarefa}
-              completaTarefa={completaTarefa}
-              removeTarefa={removeTarefa}
-            />
-          );
-        })}
+        {tarefas
+          .filter((tarefa) =>
+            filtro === "Todos"
+              ? true
+              : filtro === "Completas"
+              ? tarefa.concluido
+              : !tarefa.concluido
+          )
+          .filter((tarefa) =>
+            tarefa.descricao.toLowerCase().includes(busca.toLowerCase())
+          )
+          .map((tarefa) => {
+            return (
+              <Tarefa
+                key={tarefa.id}
+                tarefa={tarefa}
+                completaTarefa={completaTarefa}
+                removeTarefa={removeTarefa}
+              />
+            );
+          })}
       </div>
     </StyledHome>
   );
