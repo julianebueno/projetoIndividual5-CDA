@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: ${(props)=> props.theme.fundoPrincipal};
+    background-color: ${(props) => props.theme.fundoPrincipal};
     min-height: 100vh;
     font-family: 'Roboto';
   }
@@ -20,6 +20,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
-    color: ${(props)=> props.theme.branco};
+    color: ${(props) => props.theme.branco};
   }
-`
+`;

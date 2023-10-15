@@ -10,7 +10,7 @@ import Menu from "../components/shared/Menu/Menu";
 
 function Home() {
   const [tarefas, setTarefas] = useState(dataTarefas);
-  
+
   const addTarefa = (descricao) => {
     const novaTarefas = [
       ...tarefas,
@@ -22,15 +22,15 @@ function Home() {
     ];
     setTarefas(novaTarefas);
   };
-  
+
   const completaTarefa = (id) => {
     const novaTarefas = [...tarefas];
     novaTarefas.map((tarefa) =>
-      tarefa.id === id ? tarefa.concluido = !tarefa.concluido : tarefa
+      tarefa.id === id ? (tarefa.concluido = !tarefa.concluido) : tarefa
     );
     setTarefas(novaTarefas);
   };
-  
+
   const removeTarefa = (id) => {
     const novaTarefas = [...tarefas];
     const TarefasFiltradas = novaTarefas.filter((tarefa) =>
@@ -38,12 +38,12 @@ function Home() {
     );
     setTarefas(TarefasFiltradas);
   };
-  
+
   return (
     <StyledHome>
       <Header />
       <Menu addTarefa={addTarefa} />
-      
+
       <div className="listaTarefas">
         {/* <Tarefas/> */}
         {tarefas.map((tarefa) => {
